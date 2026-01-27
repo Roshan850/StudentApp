@@ -1,0 +1,21 @@
+.form-container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: hsl(216, 20%, 95%);
+}
+.h2login{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.submit{
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-left: 80px;
+    
+}
+
