@@ -1,0 +1,50 @@
+<table class="table" style="border: 2px solid black; cell-padding: 100px; width: 100%;">
+    <tr style="border: 2px solid black;">
+        <th>Roll No</th>
+
+        <th>Name</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr><hr>
+    <tr *ngFor ="let student of Students" style="border: 2px solid black;">
+        <td>{{student.rollNo}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.status}}</td>
+        <td>
+            <!--
+            <button class="present" style="background-color: rgb(220, 180, 220);">Present</button> -->
+            <button class="delete" (click)="deleteStudent(Students.indexOf(student))" style="background-color: lightblue;">Delete</button>
+            <button (click)="openEditForm(Students.indexOf(student))" class="edit" style="background-color: rgb(211, 185, 234);">Edit</button>
+        </td>
+        
+    </tr>
+    
+</table>
+<button (click)="toggleNewForm()"> Create New</button>
+<br>
+<div *ngIf = "showNewForm">
+    <h1>New Students Form</h1>
+    <input type="text" placeholder="Roll No" [(ngModel)]="newStudentRollNo">
+    <br>
+    <input type="text" placeholder="Name" [(ngModel)]="newStudentName">
+    <br>
+    <input type="text" placeholder="Status" [(ngModel)]="newStudentStatus">
+    <br>
+
+    
+    <button (click)="createNewStudent()" style="background-color: aquamarine; color: black;">Submit</button>
+</div>
+<div *ngIf="showEditForm">
+    <h1>Edit Student Form</h1>
+    <input type="text" placeholder="Roll No" [(ngModel)]="editStudentRollNo">
+    <br>
+    <input type="text" placeholder="Name" [(ngModel)]="editStudentName">
+    <br>
+    <input type="text" placeholder="Status" [(ngModel)]="editStudentStatus">
+    <br>
+    <button (click)="updateStudent()" style="background-color: aquamarine; color: black;">Update</button>
+    <button (click)="closeEditForm()" style="background-color: lightcoral; color: black;">Cancel</button>
+</div>
+
+
+<br>

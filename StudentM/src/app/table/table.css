@@ -1,0 +1,28 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.table th {
+    
+    background-color: rgb(111, 111, 217);
+}
+.present{
+    background-color: rgb(135, 126, 234);
+}
+.absent{
+    background-color: rgb(140, 139, 240);
+}
+input[type="text"] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 16px;
+    
+}
+input[type="text"]:hover {
+    border: 2px solid blue;
+}
